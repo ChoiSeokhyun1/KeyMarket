@@ -1,0 +1,120 @@
+@charset "EUC-KR";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    height:100px;
+    width: 100vw;
+	max-width:1200px;
+	min-width:1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+#wrap2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수직 가운데 정렬 */
+    height:auto;
+    min-height:500px;
+    width: 100vw;
+	max-width:1200px;
+	min-width:1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+#wrap3 {
+    display: flex;
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    height:40px;
+    width: 100vw;
+	max-width:1200px;
+	min-width:1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+#wrap4 {
+    display: flex;
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    height:50px;
+    width: 100vw;
+	max-width:1000px;
+	min-width:1080px;
+    margin: 0 auto; /* 가운데 정렬 */
+    border-top:1px solid rgb(192, 192, 192);
+}
+
+
+
+.title_Bar {
+	 display: flex;
+	 align-items: center; /* 수직 가운데 정렬 */
+    justify-content: center; /* 수평 가운데 정렬 */
+	height:50px;
+	max-width:1000px;
+	min-width:1080px;
+	border-top:1px solid rgb(192, 192, 192);
+	border-bottom:1px solid rgb(192, 192, 192);
+}
+
+.content_Bar {
+	height:auto;
+	max-width:1000px;
+	min-width:1080px;
+	margin-top:20px;
+}
+
+.id {
+	display: flex;
+	 align-items: center; /* 수직 가운데 정렬 */
+    justify-content: center; /* 수평 가운데 정렬 */
+	height:40px;
+	max-width:160px;
+	min-width:180px;
+	border-right:1.3px solid rgb(131, 131, 131);
+	margin-right:30px;
+	
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.05em;
+    max-width:650px;
+	min-width:690px;
+}
+
+.date {
+    max-width:160px;
+	min-width:180px;
+	text-align:end;
+}
+
+.half_center {
+	display: flex;
+	 width:580px;
+	 justify-content: flex-end;
+	 
+	 
+	 
+}
+
+.half_end {
+		display: flex;
+	 width:500px;
+	 justify-content: flex-end;
+}
+
+/* 버튼들 사이의 간격 설정 */
+.half_end button {
+    margin-right: 10px; /* 원하는 간격 크기로 설정 */
+}
+
+	

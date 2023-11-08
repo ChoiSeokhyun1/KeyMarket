@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+						"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="notice_mapper">
+		<!-- 아이디 중복검사 -->
+	    <select id="noticeList" resultType="notice_TableDto">
+        SELECT *
+        FROM notice_table
+        ORDER BY NOTICEBOARDNO DESC
+   		</select>
+   		
+   		
+   		
+	    <select id="noticeList2" resultType="notice_TableDto">
+    SELECT *
+    FROM (
+        SELECT t.*, ROWNUM AS rn
+        FROM (
+            SELECT *
+            FROM notice_table
+            ORDER BY NOTICEBOARDNO DESC
+        ) t
+        WHERE ROWNUM &lt;= #{page, jdbcType=INTEGER} * 10
+    )
+    WHERE rn BETWEEN (#{page, jdbcType=INTEGER} - 1) * 10 + 1 AND #{page, jdbcType=INTEGER} * 10
+</select>
+   		
+   		
+   		
+   		
+   		<insert id="insertNotice" parameterType="member_TableDto">
+    		INSERT INTO notice_table (noticeboardNo, noticeboardTitle, noticeboardContent, noticeboardDate, noticeboardname2)
+    		VALUES (noticeboardNo_seq.nextval, #{noticeboardTitle}, #{noticeboardContent}, #{noticeboardDate}, #{noticeboardname2})
+		</insert>
+		
+		<update id="updateNotice" parameterType="member_TableDto">
+		    UPDATE notice_table
+		    SET
+		    	noticeboardContent = #{noticeboardContent},
+		        noticeboardTitle = #{noticeboardTitle},
+		        noticeboardname2 = #{noticeboardname2},
+		        noticeboardDate = #{noticeboardDate}
+   			WHERE noticeboardNo = #{noticeboardNo}
+		</update>
+		
+		<delete id="deleteNotice" parameterType="member_TableDto">
+		  	DELETE FROM notice_table
+		  	WHERE noticeboardNo = #{noticeboardNo}
+		</delete>
+		
+		<select id="selectNoticeView" resultType="notice_TableDto">
+    	SELECT *
+    	FROM notice_table
+    	WHERE noticeboardname2 = #{noticeboardname2}
+    	AND noticeboardTitle = #{noticeboardTitle}
+    	AND noticeboardNo = #{noticeboardNo}
+		</select>
+		
+		<select id="selectNoticeView2" resultType="notice_TableDto">
+		    SELECT *
+		    FROM notice_table
+		    WHERE noticeboardNo = #{noticeboardNo}
+		</select>
+</mapper>

@@ -1,0 +1,491 @@
+@charset "EUC-KR";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li{
+    list-style: none;
+}
+
+li{
+    cursor: pointer;
+}
+
+a {
+	color: black; /* 검정색으로 설정 */
+    text-decoration: none;
+}
+.container {
+    width:100vw;
+    max-width:1400px;
+    min-width:1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+.navbartop{
+	 height: 60px;
+	width:100vw;
+    max-width:1400px;
+    min-width:1280px;
+    margin-bottom:25px;
+}
+
+.navbarbottom {
+    height: 70px;
+    	width:100vw;
+    max-width:1400px;
+    min-width:1280px;
+
+}
+
+.nav > ul {
+    display: flex;
+    justify-content: center;
+            margin-top:20px;
+             
+  }
+  
+  
+  .nav > ul > li {
+    height: 40px;
+    width:150px;
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .nav > ul > li > ul {
+    position: absolute;
+    top: 100%;
+    left: 50%; /* 부모 요소의 가운데로 위치 */
+    transform: translateX(-50%); /* 가로 방향으로 -50%만큼 이동하여 정확한 가운데 위치 */
+    display: none;
+    z-index: 2; /* 영역의 겹침 순서를 설정 */
+        border: 1px solid black;
+  }
+  
+  .nav > ul > li:hover > ul {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav > ul > li > ul > li {
+    height: 30px;
+    width: 250px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-top: 1px dotted black;
+
+  }
+
+    .nav > ul > li > a {
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .nav > ul > li > ul > li > a {
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .nav_menu ul li:not(:last-child)::after {
+  content: "|";
+  margin: 0 10px; /* 구분선 양옆 간격 조정 */
+  color: #999; /* 구분선 색상 설정 */
+}
+
+.nav_menu ul li:last-child::after {
+  content: none; /* 마지막 요소의 구분선은 표시하지 않음 */
+}
+
+.nav_menu ul ul.sub_nav li::after {
+  content: none; /* .sub_nav 내부의 li 요소에는 구분선 스타일을 적용하지 않음 */
+}
+  
+  
+  
+    .nav ul li:not(:last-child)::after {
+  content: "|";
+  color: #999; /* 구분선 색상 설정 */
+}
+
+.nav ul li:last-child::after {
+  content: none; /* 마지막 요소의 구분선은 표시하지 않음 */
+}
+
+.nav ul ul.sub_nav li::after {
+  content: none; /* .sub_nav 내부의 li 요소에는 구분선 스타일을 적용하지 않음 */
+}
+  
+  
+  
+  
+  
+
+  
+  
+  .nav_menu > ul {
+    display: flex;
+      justify-content: flex-end;
+  }
+  
+.nav_menu > ul > li {
+    height: 60px;
+    width:  70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+  .nav_menu > ul > li > ul {
+    position: absolute;
+    top: 100%;
+    left: 50%; /* 부모 요소의 가운데로 위치 */
+    transform: translateX(-50%); /* 가로 방향으로 -50%만큼 이동하여 정확한 가운데 위치 */
+    display: none;
+    z-index: 2; /* 영역의 겹침 순서를 설정 */
+  }
+
+.bold-text {
+  font-weight: bold;
+}
+
+.bold-text2 {
+  font-weight: bold;
+  height:21px;
+}
+
+.nav li:hover > a {
+  color: rgb(0, 0, 160); /* 마우스를 올렸을 때 텍스트 색상을 빨간색으로 변경 */
+  
+}
+
+.bgblue > li:hover > a {
+	background-color: rgb(204, 204, 255);
+}
+
+  
+  .nav_menu > ul > li:hover > ul {
+    display: flex;
+    flex-direction: column;    
+    border:1px solid black;
+  }
+  
+  
+.nav_menu > ul > li > ul > li {
+    height: 30px;
+    width: 120px; /* 가로 길이를 늘림 */
+	background-color: white;
+    font-size: 12px;
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center;
+}
+
+    .nav_menu > ul > li > a {
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+     white-space: nowrap; /* 글씨가 한 줄로 나타나도록 설정 */
+  }
+
+
+  .nav_menu > ul > li > ul > li > a {
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  
+  
+  
+  
+
+
+footer {
+    display: flex;
+    justify-content: flex-start;
+    height:300px;
+    	width: 100vw;
+		max-width:1400px;
+	min-width:1280px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+
+.footer-section {
+    padding: 10px;
+    flex-direction: column;
+}
+
+.footer-section:nth-child(1) {
+    flex:0.25;
+    display: flex;
+    justify-content: flex-start; /* 텍스트를 왼쪽으로 정렬 */
+      flex-direction: column;
+    padding-left: 20px;
+}
+
+.footer-section:nth-child(1) p {
+    margin: 0 0 0.8em; /* 텍스트 위 아래에 1em 간격 추가 */
+}
+
+.footer-section:nth-child(2) {
+    flex:0.25;
+    display: flex;
+    justify-content: flex-start; /* 텍스트를 왼쪽으로 정렬 */
+    flex-direction: column;
+}
+
+.footer-section:nth-child(2) p {
+    margin: 0 0 0.8em; /* 텍스트 위 아래에 1em 간격 추가 */
+}
+
+.footer-section:nth-child(3) {
+    flex:0.5;
+}
+
+.footer-top{
+	width: 100vw;
+	max-width:1400px;
+	min-width:1280px;
+	height:200px;
+	display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 텍스트를 오른쪽으로 정렬 */
+    padding-right:20px;
+    padding-top:50px;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+
+.footer-top img {
+	height:70px;
+	width:200px;
+}
+
+.footer-bottom{
+	width: 100vw;
+	max-width:1400px;
+	min-width:1280px;
+	height:90px;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	margin: 0 auto; /* 가운데 정렬 */
+}
+
+.lower-font{
+	 font-size: 10pt;
+	 margin-left:15px;
+}
+
+.lower-font2{
+	 font-size: 10pt;
+}
+
+.text-14pt{
+	font-size: 14pt;
+}
+
+
+.footer-section3-top{
+	height:50px;
+        display: flex;
+    justify-content: flex-end; /* 텍스트를 오른쪽으로 정렬 */
+    padding-right:20px;
+    margin-bottom:10px;
+}
+
+.footer-section3-top a {
+    margin-right: 15px;
+}
+
+.footer-section3-top a:last-child {
+    margin-right: 0; /* 마지막 <p> 요소의 마진을 0으로 설정 */
+}
+
+.footer-section3-bottom{
+	height:150px;
+    display: flex;
+    padding-right:20px;
+    flex-direction: column;
+    align-items: end;
+}
+
+.footer-section3-bottom p {
+    margin: 5px 0; /* 원하는 간격을 설정하세요 */
+}
+
+.footer-section3-bottom p:first-child {
+    margin: 0px 0px 20px; /* 맨 첫 번째 <p> 태그에는 margin을 적용하지 않음 */
+}
+
+.footer-bottom-solid {
+	margin: 0 auto; /* 가운데 정렬 */
+	width:100vw;
+		max-width:1400px;
+	min-width:1280px;
+    border-top: 1px solid gray; /* 원하는 색상으로 변경 가능 */
+}
+
+.margin-bottom {
+	margin-bottom:8px;
+}
+
+.nonstyle {
+  font-weight: normal !important; /* span 태그에 스타일 초기화 및 !important를 사용하여 다른 스타일 무시 */
+}
+
+
+
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 수직 가운데 정렬 */
+    height:auto;
+    width: 100vw;
+	max-width:700px;
+	min-width:780px;
+    margin: 0 auto; /* 가운데 정렬 */
+    margin-top:100px;
+}
+
+
+.buttonCenter {
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    gap:15px;
+}
+
+#all-check {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height:75px;
+}
+
+#all-checkbox, #checkbox2, #checkbox3, #checkbox4-1-1, #checkbox4-1-2{
+	height:20px;
+	width:20px;
+	margin-right:10px;
+	
+}
+
+form {
+	width:100%;
+	height:100%;
+	margin-top:50px;
+	border-top:2px solid black;
+	}
+	
+#title {
+	height:97.5px;
+	width:190px;
+	background-color: rgb(241, 241, 241);
+	padding-left:20px;
+}
+
+td {
+	height:97.5px;
+	width:590.5px;
+	border-bottom:1px solid rgb(212, 212, 212);
+}
+
+.required-field::before {
+    content: "*"; /* 내용으로 별표(빨간색 점)를 추가합니다. */
+    color: red; /* 글자 색상을 빨간색으로 설정합니다. */
+    margin-right: 5px; /* 별표와 필드 사이의 간격을 조절합니다. */
+  }
+
+table {
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+	
+.fontsize {
+	font-size: 18px;
+}
+
+.dis{
+	height:35px;
+	width:350px;
+	
+}
+
+.tdMargin {
+     /* 원하는 여백을 설정합니다. */
+     margin-left: 15px;
+     color:rgb(128, 128, 128);
+}
+
+.border-bottom {
+	border-bottom:1px solid lightgrey;
+}
+
+#terms-textarea {
+	max-width:700px;
+	min-width:780px;
+	height:150px;
+	color:rgb(128, 128, 128);
+}
+
+.graycolor {
+	color:rgb(128, 128, 128);
+}
+
+.checkbox4-1 {
+	display:flex;
+	align-items: center;
+	justify-content: flex-start;
+	height:100%;
+	width:100%;
+}
+
+#terms-content {
+	height:180px;
+}
+
+.spacing {
+    margin-right: 30px; /* 원하는 간격 값 설정 */
+}
+
+.lastbutton{
+	max-width:350px;
+	min-width:390px;
+	height:50px;
+}
+
+.leftbutton {
+	background-color: white;
+	font-size:14px;
+	font-weight: bold;
+}
+.rightbutton {
+	background-color: black;
+	color:white;
+	font-size:14px;
+	font-weight: bold;
+}

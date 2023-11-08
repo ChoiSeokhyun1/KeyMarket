@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+						"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mostq_mapper">
+		<!-- 아이디 중복검사 -->
+	    <select id="mostqList" resultType="qqq_TableDto">
+        SELECT *
+        FROM mostq_table
+        ORDER BY MOSTQBOARDNO DESC
+   		</select>
+   		
+   		<insert id="insertMostq" parameterType="qqq_TableDto">
+    		INSERT INTO mostq_table (mostqboardNo, mostqboardTitle, mostqboardContent, mostqboardDate, mostqboardname2)
+    		VALUES (mostqboardNo_seq.nextval, #{mostqboardTitle}, #{mostqboardContent}, #{mostqboardDate}, #{mostqboardname2})
+		</insert>
+		
+		<update id="updateMostq" parameterType="qqq_TableDto">
+		    UPDATE mostq_table
+		    SET
+		    	mostqboardContent = #{mostqboardContent},
+		        mostqboardTitle = #{mostqboardTitle},
+		        mostqboardname2 = #{mostqboardname2},
+		        mostqboardDate = #{mostqboardDate}
+   			WHERE mostqboardNo = #{mostqboardNo}
+		</update>
+		
+		<delete id="deleteMostq" parameterType="qqq_TableDto">
+		  	DELETE FROM mostq_table
+		  	WHERE mostqboardNo = #{mostqboardNo}
+		</delete>
+		
+		<select id="selectMostQView" resultType="qqq_TableDto">
+    	SELECT *
+    	FROM mostq_table
+    	WHERE mostqboardname2 = #{mostqboardname2}
+    	AND mostqboardTitle = #{mostqboardTitle}
+    	AND mostqboardNo = #{mostqboardNo}
+		</select>
+		
+		<select id="selectMostQView2" resultType="qqq_TableDto">
+    	SELECT *
+    	FROM mostq_table
+    	WHERE mostqboardNo = #{mostqboardNo}
+		</select>
+		
+		
+		<!--
+		<select id="selectNoticeView2" resultType="notice_TableDto">
+		    SELECT *
+		    FROM notice_table
+		    WHERE noticeboardNo = #{noticeboardNo}
+		</select>
+		
+		-->
+		
+		 
+</mapper>
